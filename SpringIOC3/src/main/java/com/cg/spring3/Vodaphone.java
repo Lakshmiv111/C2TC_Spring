@@ -1,6 +1,6 @@
 package com.cg.spring3;
 
-public class Vodaphone  implements Sim
+public class Vodaphone implements Sim
 {
 
 	public void calling()
