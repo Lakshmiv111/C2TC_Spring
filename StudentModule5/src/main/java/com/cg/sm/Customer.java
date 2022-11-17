@@ -3,7 +3,8 @@ package com.cg.sm;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity                           //From the java class it will mapped to the Database table. @Entity it will go and interact with database table.
+@Entity    //From the java class it will mapped to the Database table. 
+//@Entity it will go and interact with database table.
 public class Customer {
 	
 	private int id;

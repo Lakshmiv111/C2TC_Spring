@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 
 import javax.persistence.Id;
 
-@Entity                    //From the java class it will mapped to the Database table. @Entity it will go and interact with database table.  
+//From the java class it will mapped to the Database table.
+//@Entity it will go and interact with database table.
+
+@Entity //From the java class it will mapped to the Database table.
+//@Entity it will go and interact with database table.  
 public class Admin {
 
 	private int id;
@@ -12,11 +16,15 @@ public class Admin {
 	private String password;
 	private int phone;
 	
+	//right click=>Source=>Generate Constructors from Superclass.
+	
 	public Admin()          // constructor
 	{
 		super();
 	}
 
+//right click=>Source=>Generate Constructors using Fields.	
+	
 	public Admin(int id, String name, String password, int phone) {
 		super();
 		this.id = id;
@@ -24,7 +32,10 @@ public class Admin {
 		this.password = password;
 		this.phone = phone;
 	}
-	@Id                            //Primary Key
+	
+	//right click=>Source=>Generate Getters and Setters.
+	
+	@Id                  //Primary Key
 	public int getId() {
 		return id;
 	}
@@ -38,11 +49,12 @@ public class Admin {
 		return name;
 	}
 
-	public void setName(String name) {                          //setters method  
+	public void setName(String name) { //setters method  
 		this.name = name;
 	}
 
-	public String getPassword() {                        //getters method means collecting, get Balanced method
+	public String getPassword() { 
+		//getters method means collecting, get Balanced method
 		return password;
 	}
 
@@ -58,8 +70,10 @@ public class Admin {
 		this.phone = phone;
 	}
 
+	//right click=>Source=>Generate toString().
+	
 	@Override
-	public String toString() {             //override toString Method belongs to object class
+	public String toString() {  //override toString Method belongs to object class
 		return "MallAdmin [id=" + id + ", name=" + name + ", password=" + password + ", phone=" + phone + "]";
 	}
 }

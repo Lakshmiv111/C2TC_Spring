@@ -7,31 +7,42 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service                     //it will register this class as the service layer and it will enables the auto-wiring.
-@Transactional               //you can annotate a bean with @Transactional either at the class or method level. 
+@Service   
+// its a specification of @component annotation. 
+//it will register this class as the service layer and it will enables the auto-wiring.
 
-public class CustomerService {
-	@Autowired                //Force dependency injection.It injects object dependency implicitly
+@Transactional  
+//you can annotate a bean with @Transactional either at the class or method level. 
+
+
+public class CustomerService 
+{
+	@Autowired   //Force dependency injection.It injects object dependency implicitly
 	
 private CustomerRepository repo;
 	
-	public List<Customer> listAll()
+	public Customer registerCustomer(Customer customer)
 	{
-	return repo.findAll();
+		return repo.save(customer);
 	}
 	
-	public void save(Customer customer)
+	public List<Customer> getCustomer()
 	{
-	repo.save(customer);
+		return repo.findAll();
 	}
 	
-	public  Customer get(Integer id)
+	public void deleteCustomer(Integer id)
 	{
-	return repo.findById(id).get();	
+		repo.deleteById(id);
 	}
 	
-	public void delete(Integer id)
+	public Customer updateCustomer(Customer customer)
 	{
-	repo.deleteById(id);
-}
+		Integer id = customer.getId();
+		Customer cus = repo.findById(id).get();
+		cus.setName(customer.getName());
+		cus.setOrder_details(customer.getOrder_details());
+		cus.setEmail(customer.getEmail());
+		return repo.save(cus);
+	}
 }
