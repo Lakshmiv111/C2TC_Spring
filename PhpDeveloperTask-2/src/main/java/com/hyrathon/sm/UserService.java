@@ -52,6 +52,7 @@ public class UserService {
 
 	 
 		}
-
+//User Service class is used to create Methods for All REST APIs that is for 
+//Delete, Post, Put, Get.
 
 
