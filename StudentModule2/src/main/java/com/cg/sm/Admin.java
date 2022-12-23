@@ -18,7 +18,7 @@ public class Admin {
 	
 	//right click=>Source=>Generate Constructors from Superclass.
 	
-	public Admin()          // constructor
+	public Admin()       // constructor
 	{
 		super();
 	}
