@@ -21,3 +21,8 @@ public class PhpDeveloperTask2Application {
 	}
 
 }
+/*
+ Whenever we create a SpringBootApplication by default one class is getting created
+ that class is called as Main class or Start Class.
+ From This main class or start class only we should run the application.
+ */
